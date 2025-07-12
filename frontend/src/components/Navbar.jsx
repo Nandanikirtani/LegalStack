@@ -5,7 +5,7 @@ import { FaBalanceScale, FaBars, FaTimes } from "react-icons/fa";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="fixed px-4 bg-gradient-to-r from-[#0f172a] to-blue-900 text-white flex h-20 w-full shadow-2xl justify-between">
+    <div className="fixed px-4 bg-gradient-to-r from-[#0f172a] to-blue-900 text-white flex h-20 w-full shadow-2xl justify-between z-50">
       <div className="flex items-center md:ms-16 space-x-2">
         <FaBalanceScale className="text-yellow-500 text-5xl" />
         <div>
