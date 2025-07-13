@@ -1,14 +1,18 @@
 import React from "react";
 import Navbar from "../components/Navbar/";
+import Footer from "../components/Footer";
+
 import { motion } from "framer-motion";
-import { FaBrain, FaCloudUploadAlt } from "react-icons/fa";
-import { AiOutlineFileSearch, AiOutlineRobot } from "react-icons/ai";
-import { AiOutlineSearch, AiOutlineCheckCircle } from "react-icons/ai";
+import { FaBrain, FaCloudUploadAlt, FaRegCommentDots, FaFileAlt } from "react-icons/fa";
+import { AiOutlineFileSearch, AiOutlineRobot, AiOutlineSearch, AiOutlineCheckCircle } from "react-icons/ai";
 import { RiShieldCheckLine, RiArrowRightCircleLine } from "react-icons/ri";
 import { MdOutlineLibraryBooks } from "react-icons/md";
 import { HiUserGroup } from "react-icons/hi";
-import Footer from "../components/Footer";
-import { FaRegCommentDots, FaFileAlt } from "react-icons/fa";
+
+import { Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
+
+
 
 const Home = () => {
   const features = [
@@ -88,12 +92,13 @@ const Home = () => {
             cutting-edge AI with comprehensive legal knowledge.
           </p>
           <div className="flex md:flex-row flex-col text-xl font-medium justify-center mt-8 gap-4 md:gap-6">
-            <button className="bg-yellow-500 hover:bg-yellow-600 cursor-pointer text-black md:px-4 md:py-2 px-2 py-1 rounded-lg">
+            <Link to="/login" className="bg-yellow-500 hover:bg-yellow-600 cursor-pointer text-black md:px-4 md:py-2 px-2 py-1 rounded-lg"
+            >
               Start Your Legal Research
-            </button>
-            <button className="hover:bg-white hover:text-black px-2 py-1 cursor-pointer border md:px-4 md:py-2 rounded-lg">
+            </Link>
+            <ScrollLink to="works" className="hover:bg-white hover:text-black px-2 py-1 cursor-pointer border md:px-4 md:py-2 rounded-lg">
               How it works
-            </button>
+            </ScrollLink>
           </div>
         </div>
       </div>
@@ -132,7 +137,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="pt-16 py-16 px-4 text-white bg-[#0f172a]">
+      <div id="works" className="pt-16 py-16 px-4 text-white bg-[#0f172a]">
         <h1 className="text-4xl font-bold text-center mb-4">How it Works?</h1>
         <p className="text-center text-gray-400 max-w-2xl mx-auto mb-12">
           Get legal help in three simple steps — quick, AI-powered, and

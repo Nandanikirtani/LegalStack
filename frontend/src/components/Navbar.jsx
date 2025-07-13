@@ -1,6 +1,7 @@
 import { useState } from "react";
 import React from "react";
 import { FaBalanceScale, FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,8 +26,8 @@ const Navbar = () => {
         >
           Get Started
         </a>
-        <a href="">Login</a>
-        <a href="">SignUp</a>
+        <Link to="/login">Login</Link>
+        <Link to="/login">SignUp</Link>
       </div>
 
       <div className="md:hidden flex items-center">
