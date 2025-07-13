@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import Navbar from "../components/Navbar"
 
 const Login = () => {
   const [sign, setSign] = useState(false); // false = Sign In, true = Sign Up
 
   return (
+    <>
+    <Navbar/>
     <div id="login" className="min-h-screen flex items-center justify-center bg-[#0f172a] px-4">
-      <div className="flex flex-col md:flex-row w-full md:h-[600px] max-w-4xl rounded-2xl overflow-hidden shadow-lg border border-yellow-500">
+      <div className="mt-20 flex flex-col md:flex-row w-full md:h-[600px] max-w-4xl rounded-2xl overflow-hidden shadow-lg border border-yellow-500">
         
         {/* Left Info Section */}
         <div className="md:w-1/2 bg-yellow-500 flex flex-col justify-center items-center p-4 md:p-10">
@@ -106,6 +109,7 @@ const Login = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

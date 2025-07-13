@@ -92,7 +92,7 @@ const Home = () => {
             cutting-edge AI with comprehensive legal knowledge.
           </p>
           <div className="flex md:flex-row flex-col text-xl font-medium justify-center mt-8 gap-4 md:gap-6">
-            <Link to="/login" className="bg-yellow-500 hover:bg-yellow-600 cursor-pointer text-black md:px-4 md:py-2 px-2 py-1 rounded-lg"
+            <Link to="/dashboard" className="bg-yellow-500 hover:bg-yellow-600 cursor-pointer text-black md:px-4 md:py-2 px-2 py-1 rounded-lg"
             >
               Start Your Legal Research
             </Link>
