@@ -1,5 +1,5 @@
 import { asyncHandler } from "../utils/asyncHandler.js";
-import apiError from "../utils/apiError.js";
+import {ApiError} from "../utils/ApiError.js";
 import { User } from "../models/User.model.js";
 import { apiResponse } from "../utils/apiResponse.js";
 
@@ -10,7 +10,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
   //validation
   if ([name, email, password, role].some((field) => field.trim() === "")) {
-    throw new apiError("All fields are required", 400);
+    throw new ApiError("All fields are required", 400);
   }
 
   if (
@@ -23,14 +23,14 @@ const registerUser = asyncHandler(async (req, res) => {
   }
 
   //check if user already exists
-  const existedUser=User.findOne({email})
+  const existedUser= await User.findOne({email})
   if(existedUser) {
-    throw new apiError("User already exists", 400);
+    throw new ApiError("User already exists", 400);
   }
 
   //Make object to save in database
 
-    const user = await new User({
+    const user = await User.create({
         name,
         email,
         password,
@@ -38,10 +38,10 @@ const registerUser = asyncHandler(async (req, res) => {
     });
 
     //remove password and refreshToken from the response
-    const createdUser = await user.findById(user._id).select("-password -refreshToken");
+    const createdUser = await User.findById(user._id).select("-password -refreshToken");
 
     if(!createdUser) {
-        throw new apiError("User registration failed", 500);
+        throw new ApiError("User registration failed", 500);
     }     
     
     //send response
