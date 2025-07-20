@@ -25,7 +25,12 @@ const userSchema = new Schema({
     type: String,
     enum: ['lawyer', 'client', 'admin'],
     default: 'client',
-  }
+  },
+  
+    refreshToken:{
+      type: String
+    }
+  
 }, {
   timestamps: true
 });
